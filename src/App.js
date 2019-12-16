@@ -1,13 +1,13 @@
 import React from 'react';
 import SiteLayout from './components/Layout'
-import Test from './components/Test'
+import SiteSwitch from './components/SiteSwitch'
 import './App.css';
 
 
 function App() {
   return (
     <SiteLayout>
-      <Test/>
+      <SiteSwitch/>
     </SiteLayout>
   )
 }

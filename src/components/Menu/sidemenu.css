@@ -1,0 +1,10 @@
+.nav-text {
+    vertical-align: baseline;
+    display: inline-block;
+  }
+
+  .invisible-nav-text {
+    /* Do not use display: none, but set it to 0px, 
+    the animation effect is more obvious */
+    font-size: 0px;
+  }  
