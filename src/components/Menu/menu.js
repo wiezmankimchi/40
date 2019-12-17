@@ -6,7 +6,7 @@ const sideMenu = [
             { key:'0103', name:'Tom', icon:'woman', linkTo:'/user/Tom'},
         ]
     },
-    { key:'02', name:'no subMenu', icon:'clock-circle'},
+    { key:'02', name:'Login', icon:'lock', linkTo:'/login'},
     { key:'03', name:'no subMenu no icon'},
     { key:'04', name:'Teams', icon:'team',
         child: [

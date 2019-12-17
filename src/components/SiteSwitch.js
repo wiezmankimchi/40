@@ -4,6 +4,7 @@ import OptionA from './pages/OptionA'
 import OptionB from './pages/OptionB'
 import User from './User/User'
 import Team from './Team/Team'
+import GloginForm from './Login/GLoginForm'
 
 export default function SiteSwitch() {
 
@@ -17,6 +18,8 @@ export default function SiteSwitch() {
                 </Route>
                 <Route path='/user/:user' children={<User />}/>
                 <Route path='/team/:team' children={<Team />}/>
+                <Route path='/login' children={<GloginForm />}/>
+            
             </Switch>
     )
 }
