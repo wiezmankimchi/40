@@ -1,20 +1,16 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import { Link} from 'react-router-dom'
 
 import { Menu, Icon } from 'antd'
 import './sidemenu.css'
 
-import items from './menu'
 import sideMenu from './menu'
 
 const SubMenu = Menu.SubMenu
 const MenuItem = Menu.Item
 
 export default function SideMenu() {
-    const [openKeys, setOpenKeys] = useState([])
-
-    Icon.setTwoToneColor('#eb2f96');
-    
+   
     // Build single Menu Entry
     function transformMenuItem(obj, isLevel1){
         return (

@@ -1,7 +1,9 @@
 import React from "react";
-import { Grommet, Anchor, Button, Box, Text } from "grommet";
+
+import { Grommet, Anchor, Box, Text, Button } from "grommet";
 import {
   Form,
+  TextInputField,
   PasswordInputField,
   EmailInputField,
   CheckBoxField,
@@ -10,7 +12,7 @@ import {
 
 import theme from "../theme/grommet-custom";
 
-export default function LoginForm(props) {
+export default function(props) {
   return (
     <Grommet theme={theme}>
       <Box align="center" pad={{ vertical: "xlarge" }}>
@@ -27,28 +29,22 @@ export default function LoginForm(props) {
         >
           <Form
             basis="medium"
-            focusFurstChild={false}
+            focusFirstChild={false}
             onSubmit={f => alert(JSON.stringify(f))}
             {...props}
           >
+            <TextInputField
+              placeholder="User name"
+              name="username"
+              validation={[validators.required()]}
+            />
             <EmailInputField
-              // label="Email"
-              placeholder="email"
+              placeholder="Email"
               name="email"
               validation={[validators.required(), validators.email()]}
             />
             <PasswordInputField
-              label={
-                <Box align="end">
-                  <Anchor
-                    href="/reset_password"
-                    size="small"
-                    label="Forgot password?"
-                  />
-                </Box>
-              }
-              placeholder="password"
-              description="Password"
+              placeholder="Password"
               name="password"
               validation={[
                 validators.required(),
@@ -56,30 +52,37 @@ export default function LoginForm(props) {
                 validators.alphaNumeric()
               ]}
             />
-            <Box pad={{ vertical: "xxsmall" }}>
-              <CheckBoxField
-                label="Remember me"
-                name="rememberme"
-                inField={false}
-                // style={{ " margin-top": "-10px" }}
-              />
-
+            <PasswordInputField
+              placeholder="Confirm Password"
+              name="password1"
+              validation={[validators.equalsField("password")]}
+            />
+            <CheckBoxField
+              controlLabel={
+                <Box direction="row" gap="xsmall" align="center">
+                  Agree to
+                  <Anchor href="/terms_of_service" label="terms of service" />
+                </Box>
+              }
+              description="Terms of service"
+              name="accept_tos"
+              validation={[
+                validators.required(),
+                validators.True("Please accept our TOS")
+              ]}
+              style={{ marginTop: "-10px" }}
+            />
+            <Box pad={{ vertical: "medium" }} align="end">
               <Button
                 hoverIndicator="background"
                 primary={true}
                 type="submit"
-                label="Login"
+                label="Save profile"
               />
             </Box>
             <Box direction="row" alignSelf="center" gap="small" align="center">
-              <Text margin={{ top: "small" }}>
-                {"Don't have an account yet?"}
-              </Text>
-              <Anchor
-                href="/register"
-                label="Sign up"
-                margin={{ top: "small" }}
-              />
+              <Text>{"Already have an account?"}</Text>
+              <Anchor href="/login" label="Sign in" />
             </Box>
           </Form>
         </Box>
