@@ -27,7 +27,7 @@ const colors = {
     dark: "accent-1",
     light: "brand"
   },
-  focus: focusColor,
+  // focus: focusColor,
   placeholder: "design-silver",
   selected: "brand",
   text: {
@@ -59,7 +59,12 @@ mapRampToTheme(designColors, "design");
 // merge grommet `base` theme with our custom styles
 const theme = deepMerge(base, {
   global: {
-    colors
+    colors,
+    focus: {
+      border: {
+        color: "success"
+      }
+    }
   },
   anchor: {
     color: {
@@ -69,3 +74,6 @@ const theme = deepMerge(base, {
 });
 
 export default theme;
+
+
+// global.focus.border.color

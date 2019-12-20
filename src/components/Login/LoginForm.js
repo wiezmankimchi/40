@@ -22,6 +22,7 @@ export default function LoginForm(props) {
             border: "1px solid rgba(255,255,255,0.10)",
             borderRadius: "6px"
           }}
+          
           pad="medium"
           width={{ min: "350px", max: "350px" }}
         >
@@ -64,12 +65,13 @@ export default function LoginForm(props) {
                 // style={{ " margin-top": "-10px" }}
               />
 
-              <Button
+              {/* <Button
                 hoverIndicator="background"
-                primary={true}
+                // primary={true}
                 type="submit"
                 label="Login"
-              />
+              /> */}
+              <button type="submit" className="b">Login</button>
             </Box>
             <Box direction="row" alignSelf="center" gap="small" align="center">
               <Text margin={{ top: "small" }}>
