@@ -10,6 +10,8 @@ import {
 
 import theme from "../theme/grommet-custom";
 
+import Button2019 from '../theme/2019/Button2019'
+
 export default function LoginForm(props) {
   return (
     <Grommet theme={theme}>
@@ -64,14 +66,7 @@ export default function LoginForm(props) {
                 inField={false}
                 // style={{ " margin-top": "-10px" }}
               />
-
-              {/* <Button
-                hoverIndicator="background"
-                // primary={true}
-                type="submit"
-                label="Login"
-              /> */}
-              <button type="submit" className="b">Login</button>
+              <Button2019 type="submit" label="Login"/>
             </Box>
             <Box direction="row" alignSelf="center" gap="small" align="center">
               <Text margin={{ top: "small" }}>
