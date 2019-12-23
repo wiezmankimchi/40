@@ -12,7 +12,7 @@ export default function SiteSwitch() {
                 key={index}
                 path={route.path}
                 exact={route.exact}
-                children={<route.main />}
+                children={<route.breadcrumb />}
               />
             ))}
     </Switch>

@@ -1,15 +1,16 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Layout, Breadcrumb } from "antd";
 
 import SideMenu from "../Menu/SideMenu";
-import { siteContext } from "../Context/siteContext";
+
+import { useGlobal } from "../store/mainStore";
 
 const { Header, Content, Footer, Sider } = Layout;
 
 export default function SiteLayout(props) {
-  const { store, dispatch } = useContext(siteContext);
-  console.log("store=", store.breadcrumb);
+  const [store, actions] = useGlobal(["breadcrumb"]);
+  console.table(store.breadcrumb);
 
   const breadcrumItem = store.breadcrumb.map((item, key) => (
     <Breadcrumb.Item key={key}>{item}</Breadcrumb.Item>
@@ -34,8 +35,6 @@ export default function SiteLayout(props) {
           <Content style={{ margin: "0 16px" }}>
             <Breadcrumb style={{ margin: "16px 0" }}>
               {breadcrumItem}
-              {/* <Breadcrumb.Item>User</Breadcrumb.Item>
-              <Breadcrumb.Item>Wiezman</Breadcrumb.Item> */}
             </Breadcrumb>
             <div
               style={{ padding: 24, background: "#EFEEEE", minHeight: "85vh" }}

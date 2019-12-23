@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Grommet, Anchor, Box, Text, Button } from "grommet";
+import { Grommet, Anchor, Box, Text } from "grommet";
 import {
   Form,
   TextInputField,
@@ -11,6 +11,8 @@ import {
 } from "grommet-controls";
 
 import theme from "../theme/grommet-custom";
+
+import Button2019 from '../theme/2019/Button2019'
 
 export default function(props) {
   return (
@@ -61,7 +63,7 @@ export default function(props) {
               controlLabel={
                 <Box direction="row" gap="xsmall" align="center">
                   Agree to
-                  <Anchor href="/terms_of_service" label="terms of service" />
+                  <Anchor href="/terms_of_service" label="terms of service"/>
                 </Box>
               }
               description="Terms of service"
@@ -73,16 +75,11 @@ export default function(props) {
               style={{ marginTop: "-10px" }}
             />
             <Box pad={{ vertical: "medium" }} align="end">
-              <Button
-                hoverIndicator="background"
-                primary={true}
-                type="submit"
-                label="Save profile"
-              />
+              <Button2019 type="submit" label="Save Profile"/>
             </Box>
             <Box direction="row" alignSelf="center" gap="small" align="center">
               <Text>{"Already have an account?"}</Text>
-              <Anchor href="/login" label="Sign in" />
+              <Anchor href="/login" label="Sign in"/>
             </Box>
           </Form>
         </Box>

@@ -2,19 +2,27 @@ import React, { useReducer } from "react";
 import SiteLayout from "./components/Layout/Layout";
 import SiteSwitch from "./components/Layout/SiteSwitch";
 import "./App.css";
-import {
-  siteContext,
-  siteValues,
-  siteReducer
-} from "./components/Context/siteContext";
+
+// import { SiteContext } from './components/Context/SiteContext'
+
 function App() {
-  const [store, dispatch] = useReducer(siteReducer, siteValues);
+  // const [style, setStyle] = useState("light")
+  // const [visible, setVisible] = useState(true)
+
+  // function toggleStyle() {
+  //   setStyle(style => ( style === "light" ? "dark" :"light"))
+  // }
+
+  // function toggleVisible() {
+  //     setVisible(visible => !visible)
+  // }
+
   return (
-    <siteContext.Provider value={{ store, dispatch }}>
-      <SiteLayout>
-        <SiteSwitch />
-      </SiteLayout>
-    </siteContext.Provider>
+    // <SiteContext.Provider value={{ style, visible, toggleStyle, toggleVisible}}>
+    <SiteLayout>
+      <SiteSwitch />
+    </SiteLayout>
+    // </SiteContext.Provider>
   );
 }
 

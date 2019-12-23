@@ -59,9 +59,35 @@ mapRampToTheme(designColors, "design");
 // merge grommet `base` theme with our custom styles
 const theme = deepMerge(base, {
   global: {
-    colors
+    colors,
+    focus: {
+      border: {
+        color: "success"
+      }
+    }
+  },
+  button:{
+    extend:{
+      "2019":{textAlign:"center",
+      boxShadow: "rgb(255, 255, 255) -8px -8px 20px 0px, rgb(146, 146, 146) 1px 1px 14px -3px",
+      background: "rgb(239, 238, 238)",
+      border: "1px solid rgba(255, 255, 255, 0.1)",
+      borderRadius: "6px"}
+    }
   },
   anchor: {
+    extend:{
+      paddingLeft:"3px",
+      paddingRight:"3px"
+    },
+    hover:{
+      textDecoration : "none",
+      extend: {
+        // border: "1px solid rgba(255, 255, 255, 0.1)",
+        // borderRadius: "6px",
+        // boxShadow: "0 1px 2px rgba(0, 0, 0, .3) inset, 0 3px 0 #FFF"
+      }
+    },
     color: {
       dark: "theme-20"
     }
@@ -69,3 +95,5 @@ const theme = deepMerge(base, {
 });
 
 export default theme;
+
+

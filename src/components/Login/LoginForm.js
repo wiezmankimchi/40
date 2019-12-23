@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-import { Grommet, Anchor, Button, Box, Text } from "grommet";
+import React, { useState } from "react";
+import { Grommet, Anchor, Box, Text } from "grommet";
 import {
   Form,
   PasswordInputField,
@@ -10,11 +10,20 @@ import {
 
 import theme from "../theme/grommet-custom";
 
-import { siteContext } from "../Context/siteContext";
+import Button2019 from "../theme/2019/Button2019";
+import { useGlobal } from "../store/mainStore";
 
 export default function LoginForm(props) {
-  const { store, dispatch } = useContext(siteContext);
-  const breadcrumb = () => dispatch({ type: "addNew", value: "Login" });
+  const [store, actions] = useGlobal();
+  const [isLogin, setIslogin] = useState(true);
+
+  React.useEffect(() => {
+    function setBreadcrumbs() {
+      actions.setBreadcrumb(["Home", "Login"]);
+    }
+    setBreadcrumbs();
+  }, []);
+
   return (
     <Grommet theme={theme}>
       <Box align="center" pad={{ vertical: "xlarge" }}>
@@ -67,13 +76,7 @@ export default function LoginForm(props) {
                 inField={false}
                 // style={{ " margin-top": "-10px" }}
               />
-
-              <Button
-                hoverIndicator="background"
-                primary={true}
-                type="submit"
-                label="Login"
-              />
+              <Button2019 type="submit" label="Login" />
             </Box>
             <Box direction="row" alignSelf="center" gap="small" align="center">
               <Text margin={{ top: "small" }}>

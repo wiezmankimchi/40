@@ -1,8 +1,10 @@
 import React from "react";
-import { Grommet, Anchor, Button, Box } from "grommet";
+import { Grommet, Anchor, Box } from "grommet";
 import { Form, EmailInputField, validators } from "grommet-controls";
 
 import theme from "../theme/grommet-custom";
+
+import Button2019 from '../theme/2019/Button2019'
 
 export default function(props) {
   return (
@@ -33,16 +35,14 @@ export default function(props) {
             />
 
             <Box pad={{ vertical: "xxsmall" }}>
-              <Button
-                hoverIndicator="background"
-                primary={true}
+              <Button2019
                 type="submit"
                 label="Reset Password"
               />
             </Box>
-            <Box>
+            {/* <Box> */}
               <Anchor href="/login" label="Login" />
-            </Box>
+            {/* </Box> */}
           </Form>
         </Box>
       </Box>
