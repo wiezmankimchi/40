@@ -1,5 +1,5 @@
 import React from "react";
-import { Grommet, Anchor, Button, Box } from "grommet";
+import { Grommet, Anchor, Box } from "grommet";
 import { Form, EmailInputField, validators } from "grommet-controls";
 
 import theme from "../theme/grommet-custom";

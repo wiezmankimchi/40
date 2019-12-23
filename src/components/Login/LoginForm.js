@@ -1,5 +1,5 @@
-import React from "react";
-import { Grommet, Anchor, Button, Box, Text } from "grommet";
+import React, { useState } from "react";
+import { Grommet, Anchor,  Box, Text } from "grommet";
 import {
   Form,
   PasswordInputField,
@@ -11,8 +11,21 @@ import {
 import theme from "../theme/grommet-custom";
 
 import Button2019 from '../theme/2019/Button2019'
+import { useGlobal } from "../store/mainStore";
 
 export default function LoginForm(props) {
+  const [store, actions] = useGlobal();
+  const [isLogin, setIslogin] = useState(true);
+
+  
+
+  React.useEffect(() => {
+    function setBreadcrumbs(){
+      actions.setBreadcrumb(["Home","Login"])
+    }
+    setBreadcrumbs()
+  }, [])
+
   return (
     <Grommet theme={theme}>
       <Box align="center" pad={{ vertical: "xlarge" }}>

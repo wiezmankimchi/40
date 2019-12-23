@@ -13,7 +13,7 @@ const sideMenu = [
         child: [
             { key:'0401', name:'A Team', icon:'play-circle',
                 child: [
-                    { key: '040101', name:'level3-1', icon:'check'},
+                    { key: '040101', name:'level3-1', icon:'check', linkTo:'/team/TeamA'},
                     { key: '040102', name:'level3-2', icon:'open'},
                     { key: '040103', name:'level3-3', icon:'close'},
                     { key: '040104', name:'level3-4'}
@@ -29,7 +29,7 @@ const sideMenu = [
             ]},
         ]
     },
-    { key:'05', name:'grommet login', icon:'lock', linkTo:'/login'},
+    { key:'05', name:'OptionA', icon:'lock', linkTo:'/optiona'},
 
 ]
 

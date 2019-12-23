@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Grommet, Anchor, Box, Text, Button } from "grommet";
+import { Grommet, Anchor, Box, Text } from "grommet";
 import {
   Form,
   TextInputField,

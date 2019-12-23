@@ -83,10 +83,9 @@ const theme = deepMerge(base, {
     hover:{
       textDecoration : "none",
       extend: {
-       
-        border: "1px solid rgba(255, 255, 255, 0.1)",
-        borderRadius: "6px",
-        boxShadow: "0 1px 2px rgba(0, 0, 0, .3) inset, 0 3px 0 #FFF"
+        // border: "1px solid rgba(255, 255, 255, 0.1)",
+        // borderRadius: "6px",
+        // boxShadow: "0 1px 2px rgba(0, 0, 0, .3) inset, 0 3px 0 #FFF"
       }
     },
     color: {
