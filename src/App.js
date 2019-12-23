@@ -1,16 +1,20 @@
-import React from "react";
+import React, { useReducer } from "react";
 import SiteLayout from "./components/Layout/Layout";
 import SiteSwitch from "./components/Layout/SiteSwitch";
 import "./App.css";
-import { siteValues, SiteContext } from "./components/Context/siteContext";
-
+import {
+  siteContext,
+  siteValues,
+  siteReducer
+} from "./components/Context/siteContext";
 function App() {
+  const [store, dispatch] = useReducer(siteReducer, siteValues);
   return (
-    <SiteContext.Provider value={siteValues}>
+    <siteContext.Provider value={{ store, dispatch }}>
       <SiteLayout>
         <SiteSwitch />
       </SiteLayout>
-    </SiteContext.Provider>
+    </siteContext.Provider>
   );
 }
 

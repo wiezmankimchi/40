@@ -3,15 +3,15 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { Layout, Breadcrumb } from "antd";
 
 import SideMenu from "../Menu/SideMenu";
-import { SiteContext } from "../Context/siteContext";
+import { siteContext } from "../Context/siteContext";
 
 const { Header, Content, Footer, Sider } = Layout;
 
 export default function SiteLayout(props) {
-  const { breadcrumb } = useContext(SiteContext);
-  console.log(breadcrumb);
+  const { store, dispatch } = useContext(siteContext);
+  console.log("store=", store.breadcrumb);
 
-  const breadcrumItem = breadcrumb.map((item, key) => (
+  const breadcrumItem = store.breadcrumb.map((item, key) => (
     <Breadcrumb.Item key={key}>{item}</Breadcrumb.Item>
   ));
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Grommet, Anchor, Button, Box, Text } from "grommet";
 import {
   Form,
@@ -10,7 +10,11 @@ import {
 
 import theme from "../theme/grommet-custom";
 
+import { siteContext } from "../Context/siteContext";
+
 export default function LoginForm(props) {
+  const { store, dispatch } = useContext(siteContext);
+  const breadcrumb = () => dispatch({ type: "addNew", value: "Login" });
   return (
     <Grommet theme={theme}>
       <Box align="center" pad={{ vertical: "xlarge" }}>
